@@ -28,13 +28,6 @@ jobs:
           base: header, repositories, metadata
           config_display: large
           
-          # --- REPO LE PLUS ACTIF (FAITS UNIQUEMENT) ---
-          plugin_habits: yes
-          plugin_habits_from: 1000       # Augmente la précision (max 1000)
-          plugin_habits_days: 30         # Analyse sur 30 jours pour avoir plus de données
-          plugin_habits_facts: yes
-          plugin_habits_charts: no # Supprime les graphiques d'habitudes
-          
           # --- CALENDRIER ISOMÉTRIQUE (VISUEL) ---
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
