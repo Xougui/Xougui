@@ -19,7 +19,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       # --- ÉTAPE 1 : CHIFFRES CLÉS (COMMITS, PR, REPOS) ---
       - name: Statistiques de Contributions
@@ -41,6 +41,10 @@ jobs:
           plugin_habits_facts: yes
           plugin_habits_charts: no # Supprime les graphiques d'habitudes
           
+          # --- CALENDRIER ISOMÉTRIQUE (VISUEL) ---
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+          
           # --- LIGNES DE CODE ---
           plugin_lines: yes
           
@@ -60,8 +64,11 @@ jobs:
           plugin_languages_details: percentage
           plugin_languages_sections: most-used
           plugin_languages_indepth: yes # Analyse le code réel pour plus de précision
+          plugin_languages_analysis_timeout: 15 # Évite le timeout sur les gros repos
+          plugin_languages_categories: markup, programming # Filtre pour ne garder que le code pertinent
           plugin_languages_limit: 8     # Garde le graphique lisible
           plugin_languages_ignored: "" # Force l'inclusion de tous les langages (HTML/CSS inclus)
+          commits_authoring: ${{ github.repository_owner }} # Compte uniquement tes lignes de code
           output_action: none
           filename: assets/top-langs.svg
 
