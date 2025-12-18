@@ -30,7 +30,8 @@ jobs:
           
           # --- REPO LE PLUS ACTIF (FAITS UNIQUEMENT) ---
           plugin_habits: yes
-          plugin_habits_from: 200
+          plugin_habits_from: 1000       # Augmente la précision (max 1000)
+          plugin_habits_days: 30         # Analyse sur 30 jours pour avoir plus de données
           plugin_habits_facts: yes
           plugin_habits_charts: no # Supprime les graphiques d'habitudes
           
