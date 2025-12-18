@@ -10,6 +10,8 @@
 
 </div>
 
+---
+
 ### Contacts
 
 Discord: `xougui` <br>
